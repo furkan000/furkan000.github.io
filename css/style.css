@@ -3355,6 +3355,13 @@ p.terms-txt a,
   overflow: hidden;
 }
 
+#hero-17-celtic-green {
+  background: linear-gradient(rgba(1,135,73,0.6),rgba(1,135,73,0.7)),url(../images/hero-17-low-sat-green.jpg);
+  padding-top: 130px;
+  overflow: hidden;
+}
+
+
 .hero-17-title h2 {
   margin-bottom: 0;
 }

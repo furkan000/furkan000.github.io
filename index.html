@@ -9,6 +9,10 @@
 
 <head>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="author" content="DSAThemes" />
@@ -243,95 +247,251 @@
 
         <!-- HERO-17
 			============================================= -->
-        <section id="hero-17" class="bg-scroll rel hero-section division">
+        <section id="hero-17-celtic-green" class="bg-scroll rel hero-section division">
             <div class="container">
 
 
+                <div class="row d-flex align-items-center">
+                    <div class="col text-center">
 
-                <!-- HERO TITLE -->
-                <div class="row">
-                    <div class="col-md-9 col-lg-8">
+
+
+
+
+                        <!-- HERO TEXT -->
                         <div class="hero-17-title white-color mb-50">
-                            <h2 class="h2-xl">Ihre sicher Videokonferenz.</h2>
+
+                            <!-- Title -->
+                            <h2 class="h2-title-lg wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                                Ihre sichere<br />Videokonfernz.
+                            </h2>
+
+                            <!-- Buttons Group -->
+                            <div class="btns-group wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+
+
+                                <div class="interactive-tabs">
+                                    <div class="tabs-container" style="transform: translate(0px, 0px); opacity: 1;">
+                                        <div class="tabs">
+                                            <button class="active-tab">
+                                                <span class="view-icons ai"></span>
+                                                <span class="button-value mobile">AI </span>
+                                                <span class="button-value desktop">AI Generator</span>
+                                            </button>
+                                            <button class="inactive-tab">
+                                                <span class="view-icons tasks"></span>
+                                                <span class="button-value mobile">Tasks</span>
+                                                <span class="button-value desktop">Tasks &amp; Projects</span>
+                                            </button>
+                                            <button class="inactive-tab">
+                                                <span class="view-icons notes"></span>
+                                                <span class="button-value mobile">Notes</span>
+                                                <span class="button-value desktop">Notes &amp; Docs</span>
+                                            </button>
+                                            <button class="inactive-tab">
+                                                <span class="view-icons mindmap"></span>
+                                                <span class="button-value mobile">Maps</span>
+                                                <span class="button-value desktop">Mind Maps</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        tabs = document.getElementsByClassName("tabs")[0];
+                                        for (i = 0; i < tabs.children.length; i++) {
+                                            tabs.children[i].addEventListener("click", function () {
+                                                for (i = 0; i < tabs.children.length; i++) {
+                                                    tabs.children[i].classList.remove("active-tab");
+                                                    tabs.children[i].classList.add("inactive-tab");
+                                                }
+                                                this.classList.remove("inactive-tab");
+                                                this.classList.add("active-tab");
+                                            });
+                                        }
+                                    </script>
+                                    <style>
+                                        .tabs-container {
+                                            display: flex;
+                                            margin: 0px auto 40px;
+                                            flex-direction: column;
+                                            -webkit-box-align: center;
+                                            align-items: center;
+                                            padding: 0px 10px;
+                                        }
+
+                                        .tabs {
+                                            display: grid;
+                                            -webkit-box-pack: justify;
+                                            justify-content: space-between;
+                                            margin: 20px 0px 0px;
+                                            gap: 4px;
+                                            grid-template-columns: 1fr 1fr 1fr 1fr;
+                                        }
+
+                                        .active-tab {
+                                            display: flex;
+                                            flex-direction: column;
+                                            border: 0px;
+                                            outline: 0px;
+                                            margin: 0px;
+                                            max-width: 180px;
+                                            padding: 8px 16px;
+                                            cursor: pointer;
+                                            border-radius: 10px;
+                                            -webkit-box-align: center;
+                                            align-items: center;
+                                            gap: 10px;
+                                            background: rgba(255, 255, 255, 0.08);
+                                            box-shadow: rgba(255, 255, 255, 0.1) 0px 1px inset;
+                                            transition: background-color 250ms ease-in-out 0s;
+                                        }
+
+                                        .inactive-tab {
+                                            display: flex;
+                                            flex-direction: column;
+                                            border: 0px;
+                                            outline: 0px;
+                                            margin: 0px;
+                                            max-width: 180px;
+                                            padding: 8px 16px;
+                                            cursor: pointer;
+                                            border-radius: 10px;
+                                            -webkit-box-align: center;
+                                            align-items: center;
+                                            gap: 10px;
+                                            background: rgba(255, 255, 255, 0);
+                                            box-shadow: none;
+                                            transition: background-color 250ms ease-in-out 0s;
+                                        }
+
+                                        .active-tab .view-icons {
+                                            opacity: 1;
+
+                                            display: flex;
+                                            width: 30px;
+                                            height: 30px;
+                                            flex-shrink: 0;
+                                            background: url("/slideshow_icons.png") 0px 0px / 150px 30px no-repeat;
+                                            transition: opacity 150ms ease-in-out 0s;
+                                        }
+
+                                        .inactive-tab .view-icons {
+                                            opacity: 0.5;
+
+                                            display: flex;
+                                            width: 30px;
+                                            height: 30px;
+                                            flex-shrink: 0;
+                                            background: url("/slideshow_icons.png") 0px 0px / 150px 30px no-repeat;
+                                            transition: opacity 150ms ease-in-out 0s;
+                                        }
+
+                                        .active-tab>span {
+                                            color: rgb(255, 255, 255);
+                                        }
+
+                                        .active-tab .button-value.mobile {
+                                            display: none;
+                                        }
+
+                                        .active-tab .button-value.desktop {
+                                            display: flex;
+                                        }
+
+                                        .inactive-tab>span {
+                                            color: rgb(255 255 255 / 80%);
+                                        }
+
+                                        .inactive-tab .button-value.mobile {
+                                            display: none;
+                                        }
+
+                                        .inactive-tab .button-value.desktop {
+                                            display: flex;
+                                        }
+
+                                        /* icons */
+
+                                        .view-icons.tasks {
+                                            background-position: -30px 0px;
+                                        }
+
+                                        .view-icons.ai {
+                                            background-position: 0px 0px;
+                                        }
+
+                                        .view-icons.notes {
+                                            background-position: -60px 0px;
+                                        }
+
+                                        .view-icons.mindmap {
+                                            background-position: -90px 0px;
+                                        }
+
+                                        .view-icons.chat {
+                                            background-position: -120px 0px;
+                                        }
+
+                                        /* hover */
+
+                                        .inactive-tab:hover {
+                                            background: rgba(255, 255, 255, 0.08);
+                                        }
+
+                                        .inactive-tab:hover>span {
+                                            color: rgb(255, 255, 255);
+                                        }
+
+                                        .inactive-tab:hover .view-icons {
+                                            opacity: 1;
+                                        }
+                                    </style>
+                                </div>
+
+                            </div>
+
                         </div>
+
+
+                        <!-- HERO IMAGE -->
+                        <!-- <div class="hero-17-img video-preview wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;"> -->
+                        <!-- Preview Image -->
+                        <!-- <img class="img-fluid" src="images/dashboard-07.png" alt="video-preview"> -->
+                        <!-- </div> -->
+
+
+                        <div class="boxes" style="padding: 50px;">
+                            <div class="box" style="height: 100px; background: white; border-radius: 30px; box-shadow: inset 0 1px 0 hsl(224, 100%, 39%); box-shadow: 0 1px 3px hsla(0,0%, 0%, .2)">
+                                <div class="vertical-divider" style="display: flex; align-items: center; height: 100%; padding: 20px;" >
+                                        <i class="fa-solid fa-camera fa-xl" style="color:green; padding: 10px"></i>
+                                    
+                                    <div class="title-and-subtitle">
+                                        <div>
+                                            This is a test
+                                        </div>
+                                        <div>
+                                            hello
+                                        </div>
+                                    </div>
+                        
+                                </div>
+
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
                     </div>
                 </div>
 
 
 
 
-                <div class="row">
 
-
-                    <!-- HERO TEXT -->
-                    <div class="col-md-6 col-lg-5">
-                        <div class="hero-17-txt">
-
-                            <!-- Text -->
-                            <p class="p-xl white-color">Quaerat sodales sapien euismod blandit at vitae ipsum primis
-                                undo and
-                                cubilia laoreet augue luctus magna dolor luctus sapien
-                            </p>
-
-                            <!-- DOWNLOAD BUTTON -->
-                            <a href="#" class="os-btn bg-white d-flex align-items-center">
-
-                                <!-- Icon -->
-                                <div class="os-btn-ico">
-                                    <div class="ico-50">
-                                        <img src="images/png-icons/windows.png" alt="os-icon" />
-                                    </div>
-                                </div>
-
-                                <!-- Text -->
-                                <div class="os-btn-txt">
-                                    <h6 class="h6-lg">Download for Windows</h6>
-                                    <p>try 30 days free trial</p>
-                                </div>
-
-                            </a>
-
-                            <!-- DOWNLOAD BUTTON -->
-                            <a href="#" class="os-btn mac-os-btn bg-white d-flex align-items-center">
-
-                                <!-- Icon -->
-                                <div class="os-btn-ico">
-                                    <div class="ico-50">
-                                        <img src="images/png-icons/mac-os.png" alt="os-icon" />
-                                    </div>
-                                </div>
-
-                                <!-- Text -->
-                                <div class="os-btn-txt">
-                                    <h6 class="h6-lg">Download for Mac</h6>
-                                    <p>try 30 days free trial</p>
-                                </div>
-
-                            </a>
-
-                            <!-- Advantages List -->
-                            <ul class="advantages white-color clearfix mt-30">
-                                <li class="first-li">
-                                    <p>Version 2.10.074</p>
-                                </li>
-                                <li class="last-li">
-                                    <p>Free 30 days trial</p>
-                                </li>
-                            </ul>
-
-                        </div>
-                    </div>
-
-
-                    <!-- HERO IMAGE -->
-                    <div class="col-md-6 col-lg-7">
-                        <div class="hero-17-img video-preview">
-                            <img class="img-fluid" src="images/dashboard-04.png" alt="hero-image">
-                        </div>
-                    </div>
-
-
-                </div> <!-- End row -->
             </div> <!-- End container -->
         </section> <!-- END HERO-17 -->
 

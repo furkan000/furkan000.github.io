@@ -7,194 +7,191 @@
 </head>
 
 
-<div class="tabs-container" style="transform: translate(0px, 0px); opacity: 1;">
-    <div class="tabs">
-        <button class="active-tab">
-            <span class="view-icons ai"></span>
-            <span class="button-value mobile">AI </span>
-            <span class="button-value desktop">AI Generator</span>
-        </button>
-        <button class="inactive-tab">
-            <span class="view-icons tasks"></span>
-            <span class="button-value mobile">Tasks</span>
-            <span class="button-value desktop">Tasks &amp; Projects</span>
-        </button>
-        <button class="inactive-tab">
-            <span class="view-icons notes"></span>
-            <span class="button-value mobile">Notes</span>
-            <span class="button-value desktop">Notes &amp; Docs</span>
-        </button>
-        <button class="inactive-tab">
-            <span class="view-icons mindmap"></span>
-            <span class="button-value mobile">Maps</span>
-            <span class="button-value desktop">Mind Maps</span>
-        </button>
-        <button class="inactive-tab">
-            <span class="view-icons chat"></span>
-            <span class="button-value mobile">Chat</span>
-            <span class="button-value desktop">AI Chat</span>
-        </button>
+
+<div class="interactive-tabs">
+    <div class="tabs-container" style="transform: translate(0px, 0px); opacity: 1;">
+        <div class="tabs">
+            <button class="active-tab">
+                <span class="view-icons ai"></span>
+                <span class="button-value mobile">AI </span>
+                <span class="button-value desktop">AI Generator</span>
+            </button>
+            <button class="inactive-tab">
+                <span class="view-icons tasks"></span>
+                <span class="button-value mobile">Tasks</span>
+                <span class="button-value desktop">Tasks &amp; Projects</span>
+            </button>
+            <button class="inactive-tab">
+                <span class="view-icons notes"></span>
+                <span class="button-value mobile">Notes</span>
+                <span class="button-value desktop">Notes &amp; Docs</span>
+            </button>
+            <button class="inactive-tab">
+                <span class="view-icons mindmap"></span>
+                <span class="button-value mobile">Maps</span>
+                <span class="button-value desktop">Mind Maps</span>
+            </button>
+            <button class="inactive-tab">
+                <span class="view-icons chat"></span>
+                <span class="button-value mobile">Chat</span>
+                <span class="button-value desktop">AI Chat</span>
+            </button>
+        </div>
     </div>
+    <script>
+        tabs = document.getElementsByClassName("tabs")[0];
+        for (i = 0; i < tabs.children.length; i++) {
+            tabs.children[i].addEventListener("click", function () {
+                for (i = 0; i < tabs.children.length; i++) {
+                    tabs.children[i].classList.remove("active-tab");
+                    tabs.children[i].classList.add("inactive-tab");
+                }
+                this.classList.remove("inactive-tab");
+                this.classList.add("active-tab");
+            });
+        }
+    </script>
+    <style>
+        body {
+            background: green;
+        }
+
+        .tabs-container {
+            display: flex;
+            margin: 0px auto 40px;
+            flex-direction: column;
+            -webkit-box-align: center;
+            align-items: center;
+            padding: 0px 10px;
+        }
+
+        .tabs {
+            display: grid;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            margin: 20px 0px 0px;
+            gap: 4px;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+
+        .active-tab {
+            display: flex;
+            flex-direction: column;
+            border: 0px;
+            outline: 0px;
+            margin: 0px;
+            max-width: 180px;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 10px;
+            -webkit-box-align: center;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: rgba(255, 255, 255, 0.1) 0px 1px inset;
+            transition: background-color 250ms ease-in-out 0s;
+        }
+
+        .inactive-tab {
+            display: flex;
+            flex-direction: column;
+            border: 0px;
+            outline: 0px;
+            margin: 0px;
+            max-width: 180px;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 10px;
+            -webkit-box-align: center;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0);
+            box-shadow: none;
+            transition: background-color 250ms ease-in-out 0s;
+        }
+
+        .active-tab .view-icons {
+            opacity: 1;
+
+            display: flex;
+            width: 30px;
+            height: 30px;
+            flex-shrink: 0;
+            background: url("/slideshow_icons.png") 0px 0px / 150px 30px no-repeat;
+            transition: opacity 150ms ease-in-out 0s;
+        }
+
+        .inactive-tab .view-icons {
+            opacity: 0.5;
+
+            display: flex;
+            width: 30px;
+            height: 30px;
+            flex-shrink: 0;
+            background: url("/slideshow_icons.png") 0px 0px / 150px 30px no-repeat;
+            transition: opacity 150ms ease-in-out 0s;
+        }
+
+        .active-tab>span {
+            color: rgb(255, 255, 255);
+        }
+
+        .active-tab .button-value.mobile {
+            display: none;
+        }
+
+        .active-tab .button-value.desktop {
+            display: flex;
+        }
+
+        .inactive-tab>span {
+            color: rgb(204, 204, 204);
+        }
+
+        .inactive-tab .button-value.mobile {
+            display: none;
+        }
+
+        .inactive-tab .button-value.desktop {
+            display: flex;
+        }
+
+        /* icons */
+
+        .view-icons.tasks {
+            background-position: -30px 0px;
+        }
+
+        .view-icons.ai {
+            background-position: 0px 0px;
+        }
+
+        .view-icons.notes {
+            background-position: -60px 0px;
+        }
+
+        .view-icons.mindmap {
+            background-position: -90px 0px;
+        }
+
+        .view-icons.chat {
+            background-position: -120px 0px;
+        }
+
+        /* hover */
+
+        .inactive-tab:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .inactive-tab:hover>span {
+            color: rgb(255, 255, 255);
+        }
+
+        .inactive-tab:hover .view-icons {
+            opacity: 1;
+        }
+    </style>
 </div>
-
-
-<script>
-    tabs = document.getElementsByClassName("tabs")[0];
-    for (i = 0; i < tabs.children.length; i++) {
-        tabs.children[i].addEventListener("click", function () {
-            for (i = 0; i < tabs.children.length; i++) {
-                tabs.children[i].classList.remove("active-tab");
-                tabs.children[i].classList.add("inactive-tab");
-            }
-            this.classList.remove("inactive-tab");
-            this.classList.add("active-tab");
-        });
-    }
-</script>
-
-
-
-<style>
-    body {
-        background: green;
-    }
-
-    .tabs-container {
-        display: flex;
-        margin: 0px auto 40px;
-        flex-direction: column;
-        -webkit-box-align: center;
-        align-items: center;
-        padding: 0px 10px;
-    }
-
-    .tabs {
-        display: grid;
-        -webkit-box-pack: justify;
-        justify-content: space-between;
-        margin: 20px 0px 0px;
-        gap: 4px;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    }
-
-    .active-tab {
-        display: flex;
-        flex-direction: column;
-        border: 0px;
-        outline: 0px;
-        margin: 0px;
-        max-width: 180px;
-        padding: 8px 16px;
-        cursor: pointer;
-        border-radius: 10px;
-        -webkit-box-align: center;
-        align-items: center;
-        gap: 10px;
-        background: rgba(255, 255, 255, 0.08);
-        box-shadow: rgba(255, 255, 255, 0.1) 0px 1px inset;
-        transition: background-color 250ms ease-in-out 0s;
-    }
-
-    .inactive-tab {
-        display: flex;
-        flex-direction: column;
-        border: 0px;
-        outline: 0px;
-        margin: 0px;
-        max-width: 180px;
-        padding: 8px 16px;
-        cursor: pointer;
-        border-radius: 10px;
-        -webkit-box-align: center;
-        align-items: center;
-        gap: 10px;
-        background: rgba(255, 255, 255, 0);
-        box-shadow: none;
-        transition: background-color 250ms ease-in-out 0s;
-    }
-
-    .active-tab .view-icons {
-        opacity: 1;
-
-        display: flex;
-        width: 30px;
-        height: 30px;
-        flex-shrink: 0;
-        background: url("/slideshow_icons.png") 0px 0px / 150px 30px no-repeat;
-        transition: opacity 150ms ease-in-out 0s;
-    }
-
-    .inactive-tab .view-icons {
-        opacity: 0.5;
-
-        display: flex;
-        width: 30px;
-        height: 30px;
-        flex-shrink: 0;
-        background: url("/slideshow_icons.png") 0px 0px / 150px 30px no-repeat;
-        transition: opacity 150ms ease-in-out 0s;
-    }
-
-    .active-tab>span {
-        color: rgb(255, 255, 255);
-    }
-
-    .active-tab .button-value.mobile {
-        display: none;
-    }
-
-    .active-tab .button-value.desktop {
-        display: flex;
-    }
-
-    .inactive-tab>span {
-        color: rgb(204, 204, 204);
-    }
-
-    .inactive-tab .button-value.mobile {
-        display: none;
-    }
-
-    .inactive-tab .button-value.desktop {
-        display: flex;
-    }
-
-    /* icons */
-
-    .view-icons.tasks {
-        background-position: -30px 0px;
-    }
-
-    .view-icons.ai {
-        background-position: 0px 0px;
-    }
-
-    .view-icons.notes {
-        background-position: -60px 0px;
-    }
-
-    .view-icons.mindmap {
-        background-position: -90px 0px;
-    }
-
-    .view-icons.chat {
-        background-position: -120px 0px;
-    }
-
-    /* hover */
-
-    .inactive-tab:hover {
-        background: rgba(255, 255, 255, 0.08);
-    }
-
-    .inactive-tab:hover>span {
-        color: rgb(255, 255, 255);
-    }
-
-    .inactive-tab:hover .view-icons {
-        opacity: 1;
-    }
-</style>
-
 
 </html>

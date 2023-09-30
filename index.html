@@ -267,9 +267,9 @@
           <div class="row d-flex align-items-center">
             <div class="col text-center">
               <!-- HERO TEXT -->
-              <div class="hero-17-title white-color mb-50">
+              <div class="hero-17-title white-color">
                 <!-- Title -->
-                <h2 class="h2-title-lg wow fadeInUp" style="visibility: visible; animation-name: fadeInUp">Ihre sichere<br />Videokonfernz.</h2>
+                <h2 class="h2-title-sm wow fadeInUp" style="visibility: visible; animation-name: fadeInUp">Ihre sichere<br />Videokonfernz.</h2>
 
                 <!-- Buttons Group -->
                 <div class="btns-group wow fadeInUp" style="visibility: visible; animation-name: fadeInUp">
@@ -348,7 +348,7 @@
                     <style>
                       .tabs-container {
                         display: flex;
-                        margin: 0px auto 40px;
+                        margin: 0px auto 20px;
                         flex-direction: column;
                         -webkit-box-align: center;
                         align-items: center;
@@ -492,58 +492,64 @@
               <!-- <img class="img-fluid" src="images/dashboard-07.png" alt="video-preview"> -->
               <!-- </div> -->
 
-              <style>
-                .box {
-                  margin-bottom: 35px;
-                }
-              </style>
-
-              <div style="min-height: 460px" class="flex flex-column justify-content-center">
-                <div id="tab1" class="justify-content-center" style="display: block">
-                  <img src="../Tab1.png" alt="TODO" />
+              <div id="tabs" class="flex flex-column justify-content-center">
+                <div id="tab1" class="justify-content-center" style="display: flex">
+                  <!-- <img src="../3.png" class="wow fadeInRight absolute w-full h-full myImage" alt="TODO" /> -->
+                  <!-- <img src="../2.png" class="wow fadeInUp absolute w-full h-full myImage" alt="TODO" /> -->
+                  <!-- <img src="../1.png" class="wow fadeInLeft relative w-full h-full myImage" alt="TODO" /> -->
+                  <div style="max-height: 50vh">
+                    <img src="../Tab1.png" style="object-fit: contain" class="h-full w-full" alt="TODO" />
+                  </div>
                 </div>
 
                 <div id="tab2" class="justify-content-center" style="display: none">
-                  <img src="../Tab2.png" alt="TODO" />
+                  <div style="height: 50vh">
+                    <img src="../Tab2.png" alt="TODO" style="object-fit: contain" class="w-full h-full" />
+                  </div>
                 </div>
 
-                <style>
-                  .boxes {
-                    display: flex;
-                    align-items: center;
-                    flex-direction: column;
-                  }
-
-                  .box {
-                    width: 75ch;
-                    background: white;
-                    border-radius: 15px;
-                    box-shadow: 0 5px 8px hsla(0, 0%, 0%, 0.2), 0 -1px 0 #73c999;
-                    display: flex;
-                    align-items: center;
-                    height: 100%;
-                    padding: 18px;
-                    text-align: left;
-                  }
-
-                  .box-title {
-                    color: #135a31;
-                    font-size: 1.15rem;
-                  }
-
-                  .box-subtitle {
-                    color: #3a3325;
-                    font-size: 1rem;
-                  }
-
-                  .box-icon {
-                    color: #135a31;
-                    padding-left: 20px;
-                    padding-right: 40px;
-                  }
-                </style>
-
                 <div id="tab3" class="justify-content-center flex-column" style="display: none">
+                  <style>
+                    /* * {
+                      outline: 1px solid red;
+                    } */
+
+                    .boxes {
+                      display: flex;
+                      align-items: center;
+                      flex-direction: column;
+                    }
+
+                    .box {
+                      margin-bottom: 35px;
+                      width: 75ch;
+                      background: white;
+                      border-radius: 15px;
+                      box-shadow: 0 5px 8px hsla(0, 0%, 0%, 0.2), 0 -1px 0 #73c999;
+                      display: flex;
+                      align-items: center;
+                      height: 100%;
+                      padding: 18px;
+                      text-align: left;
+                    }
+
+                    .box-title {
+                      color: #135a31;
+                      font-size: 1.15rem;
+                    }
+
+                    .box-subtitle {
+                      color: #3a3325;
+                      font-size: 1rem;
+                    }
+
+                    .box-icon {
+                      color: #135a31;
+                      padding-left: 20px;
+                      padding-right: 40px;
+                    }
+                  </style>
+
                   <div class="boxes" v-for="n in 3">
                     <div class="box">
                       <i class="box-icon fa-solid fa-camera fa-xl"></i>
@@ -554,12 +560,6 @@
                     </div>
                   </div>
                 </div>
-
-                <style>
-                  .test {
-                    border: 1px solid red;
-                  }
-                </style>
 
                 <div id="tab4" class="pb-8" style="display: none; color: white; text-align: left; max-width: 700px; margin: 0 auto">
                   <div class="">
@@ -592,7 +592,7 @@
 
       <!-- BRANDS-1
 			============================================= -->
-      <div id="brands-1" class="pt-80 pb-100 brands-section division" style="background: black">
+      <div id="brands-1" class="pt-80 pb-100 brands-section division">
         <div class="container">
           <!-- BRANDS TITLE -->
           <div class="row justify-content-center">

@@ -277,7 +277,9 @@
       }
 
       .tab-content > .tab-pane {
-        display: block; /* undo "display: none;" */
+        display: flex; /* undo "display: none;" */
+        justify-content: center;
+        align-items: center;
         visibility: hidden;
         margin-right: -100%;
         width: 100%;
@@ -293,18 +295,14 @@
         <!-- <img src="../3.png" class="wow fadeInRight absolute w-full h-full myImage" alt="TODO" /> -->
         <!-- <img src="../2.png" class="wow fadeInUp absolute w-full h-full myImage" alt="TODO" /> -->
         <!-- <img src="../1.png" class="wow fadeInLeft relative w-full h-full myImage" alt="TODO" /> -->
-        <div style="max-height: 50vh">
-          <img src="../Tab1.png" style="object-fit: contain" class="h-full w-full" alt="TODO" />
-        </div>
+        <img src="../Tab1.png" style="object-fit: contain; max-height: 50vh" class="w-full" alt="TODO" />
       </div>
 
       <div id="tab2" class="tab-pane">
-        <div style="height: 50vh">
-          <img src="../Tab2.png" alt="TODO" style="object-fit: contain" class="w-full h-full" />
-        </div>
+        <img src="../Tab2.png" style="object-fit: contain; max-height: 50vh" class="w-full" alt="TODO" />
       </div>
 
-      <div id="tab3" class="tab-pane">
+      <div id="tab3" class="tab-pane flex-column">
         <style>
           /* * {
               outline: 1px solid red;
@@ -358,21 +356,22 @@
       </div>
 
       <div id="tab4" class="tab-pane" style="color: white; text-align: left; max-width: 700px; margin: 0 auto">
-        <div class="">
-          <div class="text-5xl line-height-2 font-medium">Ab 20€ pro Raum</div>
-          <div class="font-medium pt-3 underline" style="color: #cce7d7">bis zu 150 Teilnehmern</div>
-        </div>
+        <div class="flex">
+          <div>
+            <div class="text-5xl line-height-2 font-medium">Ab 20€ pro Raum</div>
+            <div class="font-medium pt-3 underline" style="color: #cce7d7">bis zu 150 Teilnehmern</div>
+          </div>
 
-        <div class="vr mx-5" style="color: #a8ddbd"></div>
+          <div class="vr mx-5" style="color: #a8ddbd"></div>
+          <div>
+            <div class="text-5xl line-height-2 font-medium">Überzeugen Sie sich selst</div>
+            <div class="font-medium pt-3" style="color: #cce7d7">keine Kreditkarte erforderlich</div>
 
-        <div class="">
-          <div class="text-5xl line-height-2 font-medium">Überzeugen Sie sich selst</div>
-          <div class="font-medium pt-3" style="color: #cce7d7">keine Kreditkarte erforderlich</div>
-
-          <div class="pt-6">
-            <button class="btn btn-rounded btn-shadow btn-lg" style="background: #91c02b; box-shadow: 0 5px 8px hsla(0, 0%, 0%, 0.2), 0 -1px 0 #c2e080">
-              <span class="btn-text">14 Tage Kostenlos Testen</span>
-            </button>
+            <div class="pt-6">
+              <button class="btn btn-rounded btn-shadow btn-lg" style="background: #91c02b; box-shadow: 0 5px 8px hsla(0, 0%, 0%, 0.2), 0 -1px 0 #c2e080">
+                <span class="btn-text">14 Tage Kostenlos Testen</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>

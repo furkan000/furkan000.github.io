@@ -123,9 +123,9 @@
 
               for (i = 0; i < tabs.children.length; i++) {
                 if (tabs.children[i].classList.contains("active-tab")) {
-                  document.getElementById("tab" + (i + 1)).style.visibility = "visible";
+                  document.getElementById("tab" + (i + 1)).classList.add("active");
                 } else {
-                  document.getElementById("tab" + (i + 1)).style.visibility = "hidden";
+                  document.getElementById("tab" + (i + 1)).classList.remove("active");
                 }
               }
             });
@@ -281,12 +281,14 @@
         justify-content: center;
         align-items: center;
         visibility: hidden;
+        opacity: 0%;
         margin-right: -100%;
         width: 100%;
       }
 
       .tab-content > .active {
         visibility: visible;
+        opacity: 100%;
       }
     </style>
 

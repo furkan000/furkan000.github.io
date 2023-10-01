@@ -150,25 +150,25 @@
                     <div class="tabs-container" style="transform: translate(0px, 0px); opacity: 1">
                       <div class="tabs">
                         <button class="active-tab">
-                          <span class="view-icons ai toggle"></span>
+                          <span class="view-icons ai toggleOff"></span>
                           <span class="flaticon-calendar"></span>
                           <span class="button-value mobile">Planen</span>
                           <span class="button-value desktop">Starke Planung</span>
                         </button>
                         <button class="inactive-tab">
-                          <span class="view-icons tasks toggle"></span>
+                          <span class="view-icons tasks toggleOff"></span>
                           <span class="flaticon-user"></span>
                           <span class="button-value mobile">Meeten</span>
                           <span class="button-value desktop">Perfekte Meetings</span>
                         </button>
                         <button class="inactive-tab">
-                          <span class="view-icons notes toggle"></span>
+                          <span class="view-icons notes toggleOff"></span>
                           <span class="flaticon-shield"></span>
                           <span class="button-value mobile">DSGVO</span>
                           <span class="button-value desktop">Fokus Datenschutz</span>
                         </button>
                         <button class="inactive-tab">
-                          <span class="view-icons mindmap toggle"></span>
+                          <span class="view-icons mindmap toggleOff"></span>
                           <span class="flaticon-price"></span>
                           <span class="button-value mobile">Preis</span>
                           <span class="button-value desktop">Super Preiswert</span>
@@ -205,11 +205,20 @@
                   <!-- <img src="../3.png" class="wow fadeInRight absolute w-full h-full myImage" alt="TODO" /> -->
                   <!-- <img src="../2.png" class="wow fadeInUp absolute w-full h-full myImage" alt="TODO" /> -->
                   <!-- <img src="../1.png" class="wow fadeInLeft relative w-full h-full myImage" alt="TODO" /> -->
-                  <img src="../Tab1.png" style="object-fit: contain; max-height: 45vh" class="w-full" alt="TODO" />
+
+                  <!-- <img src="../tab-1.png" style="object-fit: contain; max-height: 45vh" class="w-full" alt="TODO" /> -->
+
+                  <picture>
+                    <source srcset="../tab-1-mobile.png" media="(max-width: 601px)" />
+                    <img src="../tab-1.png" style="object-fit: contain; max-height: 45vh" class="w-full" alt="TODO" />
+                  </picture>
                 </div>
 
                 <div id="tab-2" class="tab-pane">
-                  <img src="../Tab2.png" style="object-fit: contain; max-height: 45vh" class="w-full" alt="TODO" />
+                  <picture>
+                    <source srcset="../tab-2-mobile.png" media="(max-width: 601px)" />
+                    <img src="../tab-2.png" style="object-fit: contain; max-height: 45vh" class="w-full" alt="TODO" />
+                  </picture>
                 </div>
 
                 <div id="tab-3" class="tab-pane flex-column">

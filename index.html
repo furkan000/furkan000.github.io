@@ -279,25 +279,25 @@
                         <button class="active-tab">
                           <span class="view-icons ai toggle"></span>
                           <span class="flaticon-calendar"></span>
-                          <span class="button-value mobile">AI </span>
+                          <span class="button-value mobile">Planen</span>
                           <span class="button-value desktop">Starke Planung</span>
                         </button>
                         <button class="inactive-tab">
                           <span class="view-icons tasks toggle"></span>
                           <span class="flaticon-user"></span>
-                          <span class="button-value mobile">Tasks</span>
+                          <span class="button-value mobile">Meeten</span>
                           <span class="button-value desktop">Perfekte Meetings</span>
                         </button>
                         <button class="inactive-tab">
                           <span class="view-icons notes toggle"></span>
                           <span class="flaticon-shield"></span>
-                          <span class="button-value mobile">Notes</span>
+                          <span class="button-value mobile">DSGVO</span>
                           <span class="button-value desktop">Fokus Datenschutz</span>
                         </button>
                         <button class="inactive-tab">
                           <span class="view-icons mindmap toggle"></span>
                           <span class="flaticon-price"></span>
-                          <span class="button-value mobile">Maps</span>
+                          <span class="button-value mobile">Preis</span>
                           <span class="button-value desktop">Super Preiswert</span>
                         </button>
                       </div>
@@ -337,9 +337,9 @@
 
                           for (i = 0; i < tabs.children.length; i++) {
                             if (tabs.children[i].classList.contains("active-tab")) {
-                              document.getElementById("tab" + (i + 1)).style.display = "flex";
+                              document.getElementById("tab" + (i + 1)).classList.add("active");
                             } else {
-                              document.getElementById("tab" + (i + 1)).style.display = "none";
+                              document.getElementById("tab" + (i + 1)).classList.remove("active");
                             }
                           }
                         });
@@ -426,24 +426,26 @@
                         color: rgb(255, 255, 255);
                       }
 
-                      .active-tab .button-value.mobile {
+                      .button-value.mobile {
                         display: none;
                       }
 
-                      .active-tab .button-value.desktop {
+                      .button-value.desktop {
                         display: flex;
+                      }
+
+                      @media (max-width: 601px) {
+                        .button-value.mobile {
+                          display: flex;
+                        }
+
+                        .button-value.desktop {
+                          display: none;
+                        }
                       }
 
                       .inactive-tab > span {
                         color: rgb(255 255 255 / 80%);
-                      }
-
-                      .inactive-tab .button-value.mobile {
-                        display: none;
-                      }
-
-                      .inactive-tab .button-value.desktop {
-                        display: flex;
                       }
 
                       /* icons */
@@ -492,27 +494,44 @@
               <!-- <img class="img-fluid" src="images/dashboard-07.png" alt="video-preview"> -->
               <!-- </div> -->
 
-              <div id="tabs" class="flex flex-column justify-content-center">
-                <div id="tab1" class="justify-content-center" style="display: flex">
+              <div class="tab-content">
+                <style>
+                  .tab-content {
+                    display: flex;
+                  }
+
+                  .tab-content > .tab-pane {
+                    display: flex; /* undo "display: none;" */
+                    justify-content: center;
+                    align-items: center;
+                    visibility: hidden;
+                    opacity: 0%;
+                    margin-right: -100%;
+                    width: 100%;
+                  }
+
+                  .tab-content > .active {
+                    visibility: visible;
+                    opacity: 100%;
+                  }
+                </style>
+
+                <div id="tab1" class="tab-pane active">
                   <!-- <img src="../3.png" class="wow fadeInRight absolute w-full h-full myImage" alt="TODO" /> -->
                   <!-- <img src="../2.png" class="wow fadeInUp absolute w-full h-full myImage" alt="TODO" /> -->
                   <!-- <img src="../1.png" class="wow fadeInLeft relative w-full h-full myImage" alt="TODO" /> -->
-                  <div style="max-height: 50vh">
-                    <img src="../Tab1.png" style="object-fit: contain" class="h-full w-full" alt="TODO" />
-                  </div>
+                  <img src="../Tab1.png" style="object-fit: contain; max-height: 45vh" class="w-full" alt="TODO" />
                 </div>
 
-                <div id="tab2" class="justify-content-center" style="display: none">
-                  <div style="height: 50vh">
-                    <img src="../Tab2.png" alt="TODO" style="object-fit: contain" class="w-full h-full" />
-                  </div>
+                <div id="tab2" class="tab-pane">
+                  <img src="../Tab2.png" style="object-fit: contain; max-height: 45vh" class="w-full" alt="TODO" />
                 </div>
 
-                <div id="tab3" class="justify-content-center flex-column" style="display: none">
+                <div id="tab3" class="tab-pane flex-column">
                   <style>
                     /* * {
-                      outline: 1px solid red;
-                    } */
+                        outline: 1px solid red;
+                      } */
 
                     .boxes {
                       display: flex;
@@ -561,28 +580,27 @@
                   </div>
                 </div>
 
-                <div id="tab4" class="pb-8" style="display: none; color: white; text-align: left; max-width: 700px; margin: 0 auto">
-                  <div class="">
-                    <div class="text-5xl line-height-2 font-medium">Ab 20€ pro Raum</div>
-                    <div class="font-medium pt-3 underline" style="color: #cce7d7">bis zu 150 Teilnehmern</div>
-                  </div>
+                <div id="tab4" class="tab-pane" style="color: white; text-align: left; max-width: 700px; margin: 0 auto">
+                  <div class="flex">
+                    <div>
+                      <div class="text-5xl line-height-2 font-medium">Ab 20€ pro Raum</div>
+                      <div class="font-medium pt-3 underline" style="color: #cce7d7">bis zu 150 Teilnehmern</div>
+                    </div>
 
-                  <div class="vr mx-5" style="color: #a8ddbd"></div>
+                    <div class="vr mx-5" style="color: #a8ddbd"></div>
+                    <div>
+                      <div class="text-5xl line-height-2 font-medium">Überzeugen Sie sich selst</div>
+                      <div class="font-medium pt-3" style="color: #cce7d7">keine Kreditkarte erforderlich</div>
 
-                  <div class="">
-                    <div class="text-5xl line-height-2 font-medium">Überzeugen Sie sich selst</div>
-                    <div class="font-medium pt-3" style="color: #cce7d7">keine Kreditkarte erforderlich</div>
-
-                    <div class="pt-6">
-                      <button class="btn btn-rounded btn-shadow btn-lg" style="background: #91c02b; box-shadow: 0 5px 8px hsla(0, 0%, 0%, 0.2), 0 -1px 0 #c2e080">
-                        <span class="btn-text">14 Tage Kostenlos Testen</span>
-                      </button>
+                      <div class="pt-6">
+                        <button class="btn btn-rounded btn-shadow btn-lg" style="background: #91c02b; box-shadow: 0 5px 8px hsla(0, 0%, 0%, 0.2), 0 -1px 0 #c2e080">
+                          <span class="btn-text">14 Tage Kostenlos Testen</span>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-              <div />
             </div>
           </div>
         </div>

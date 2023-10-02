@@ -1,4 +1,11 @@
 /* TODO */
+
+@media (max-width: 601px) {
+  #hero-3.less-padding {
+    padding-top: 45px;
+  }
+}
+
 * {
   animation: none !important;
 }

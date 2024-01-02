@@ -13,7 +13,29 @@ const de = {
     necessaryCookiesTitle: "Streng Notwendige Cookies <span class=\"pm__badge\">Immer Aktiviert</span>",
     necessaryCookiesDescription: "Diese Cookies sind für die Grundfunktionen der Website erforderlich und können nicht deaktiviert werden.",
     analyticalCookiesTitle: "Analytische Cookies",
-    analyticalCookiesDescription: "Mit analytischen Cookies verstehen wir, wie Sie unsere Website nutzen. Diese Daten helfen, Ihr Nutzererlebnis zu verbessern.",
+    analyticalCookiesDescription: "Mit analytischen Cookies verstehen wir, wie Sie unsere Website nutzen. Diese Daten helfen uns, Ihr Nutzererlebnis zu verbessern.",
+    caption: 'Cookies',
+    // Headers
+    headerName: 'Name',
+    headerProvider: 'Anbieter',
+    headerPurpose: 'Zweck',
+    headerPrivacyPolicy: 'Datenschutzerklärung',
+    headerCookieName: 'Cookie Name',
+    headerDuration: 'Cookie Laufzeit',
+    // Body - Google Analytics
+    analyticsName: 'Google Analytics',
+    analyticsProvider: 'Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland',
+    analyticsPurpose: 'Cookie von Google für Website-Analysen. Erzeugt statistische Daten darüber, wie der Besucher die Website nutzt.',
+    analyticsPrivacyPolicy: 'https://policies.google.com/privacy?hl=de',
+    analyticsCookieName: '_ga,_gat,_gid',
+    analyticsDuration: '2 Monate',
+    // Body - Google Tag Manager
+    tagManagerName: 'Google Tag Manager',
+    tagManagerProvider: 'Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland',
+    tagManagerPurpose: 'Cookie von Google zur Steuerung der erweiterten Script- und Ereignisbehandlung.',
+    tagManagerPrivacyPolicy: 'https://policies.google.com/privacy?hl=de',
+    tagManagerCookieName: '_ga,_gat,_gid',
+    tagManagerDuration: '2 Jahre'
 };
 
 const en = {
@@ -30,6 +52,28 @@ const en = {
     necessaryCookiesDescription: "These cookies are necessary for the basic functions of the website and cannot be deactivated.",
     analyticalCookiesTitle: "Analytical Cookies",
     analyticalCookiesDescription: "Analytical cookies help us understand how you use our website. This data helps improve your user experience.",
+    caption: 'Cookies',
+    // Headers
+    headerName: 'Name',
+    headerProvider: 'Provider',
+    headerPurpose: 'Purpose',
+    headerPrivacyPolicy: 'Privacy Policy',
+    headerCookieName: 'Cookie Name',
+    headerDuration: 'Cookie Duration',
+    // Body - Google Analytics
+    analyticsName: 'Google Analytics',
+    analyticsProvider: 'Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland',
+    analyticsPurpose: 'Google cookie for website analytics. Generates statistical data on how the visitor uses the website.',
+    analyticsPrivacyPolicy: 'https://policies.google.com/privacy?hl=en',
+    analyticsCookieName: '_ga,_gat,_gid',
+    analyticsDuration: '2 months',
+    // Body - Google Tag Manager
+    tagManagerName: 'Google Tag Manager',
+    tagManagerProvider: 'Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland',
+    tagManagerPurpose: 'Google cookie for controlling advanced script and event handling.',
+    tagManagerPrivacyPolicy: 'https://policies.google.com/privacy?hl=en',
+    tagManagerCookieName: '_ga,_gat,_gid',
+    tagManagerDuration: '2 years'
 };
 
 const fr = {
@@ -46,6 +90,28 @@ const fr = {
     necessaryCookiesDescription: "Ces cookies sont nécessaires aux fonctions de base du site Web et ne peuvent pas être désactivés.",
     analyticalCookiesTitle: "Cookies analytiques",
     analyticalCookiesDescription: "Les cookies analytiques nous aident à comprendre comment vous utilisez notre site Web. Ces données aident à améliorer votre expérience utilisateur.",
+    caption: 'Cookies',
+    // Headers
+    headerName: 'Nom',
+    headerProvider: 'Fournisseur',
+    headerPurpose: 'But',
+    headerPrivacyPolicy: 'Politique de confidentialité',
+    headerCookieName: 'Nom du Cookie',
+    headerDuration: 'Durée du Cookie',
+    // Body - Google Analytics
+    analyticsName: 'Google Analytics',
+    analyticsProvider: 'Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irlande',
+    analyticsPurpose: 'Cookie de Google pour les analyses de sites Web. Génère des données statistiques sur la manière dont le visiteur utilise le site Web.',
+    analyticsPrivacyPolicy: 'https://policies.google.com/privacy?hl=fr',
+    analyticsCookieName: '_ga,_gat,_gid',
+    analyticsDuration: '2 mois',
+    // Body - Google Tag Manager
+    tagManagerName: 'Google Tag Manager',
+    tagManagerProvider: 'Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irlande',
+    tagManagerPurpose: 'Cookie de Google pour la gestion des scripts avancés et le traitement des événements.',
+    tagManagerPrivacyPolicy: 'https://policies.google.com/privacy?hl=fr',
+    tagManagerCookieName: '_ga,_gat,_gid',
+    tagManagerDuration: '2 ans'
 };
 
 function generateTranslationObjectForLang(langObj) {
@@ -74,7 +140,36 @@ function generateTranslationObjectForLang(langObj) {
                 {
                     title: langObj.analyticalCookiesTitle,
                     description: langObj.analyticalCookiesDescription,
-                    linkedCategory: "analytics"
+                    linkedCategory: "analytics",
+                    cookieTable: {
+                        caption: de.caption,
+                        headers: {
+                            name: langObj.headerName,
+                            provider: langObj.headerProvider,
+                            purpose: langObj.headerPurpose,
+                            privacyPolicy: langObj.headerPrivacyPolicy,
+                            cookieName: langObj.headerCookieName,
+                            duration: langObj.headerDuration,
+                        },
+                        body: [
+                            {
+                                name: langObj.analyticsName,
+                                provider: langObj.analyticsProvider,
+                                purpose: langObj.analyticsPurpose,
+                                privacyPolicy: langObj.analyticsPrivacyPolicy,
+                                cookieName: langObj.analyticsCookieName,
+                                duration: langObj.analyticsDuration,
+                            },
+                            {
+                                name: langObj.tagManagerName,
+                                provider: langObj.tagManagerProvider,
+                                purpose: langObj.tagManagerPurpose,
+                                privacyPolicy: langObj.tagManagerPrivacyPolicy,
+                                cookieName: langObj.tagManagerCookieName,
+                                duration: langObj.tagManagerDuration,
+                            }
+                        ]
+                    }
                 }
             ]
         }
@@ -85,8 +180,8 @@ function generateTranslationObjectForLang(langObj) {
 let settings = {
     guiOptions: {
         consentModal: {
-            layout: "box",
-            position: "bottom right",
+            layout: "bar", // box, cloud, bar
+            position: "bottom left",
             equalWeightButtons: false,
             flipButtons: false
         },

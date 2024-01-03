@@ -14,7 +14,8 @@ const de = {
     necessaryCookiesDescription: "Diese Cookies sind für die Grundfunktionen der Website erforderlich und können nicht deaktiviert werden.",
     analyticalCookiesTitle: "Analytische Cookies",
     analyticalCookiesDescription: "Mit analytischen Cookies verstehen wir, wie Sie unsere Website nutzen. Diese Daten helfen uns, Ihr Nutzererlebnis zu verbessern.",
-    caption: 'Cookies',
+    cookieTableCaption: 'Cookies',
+    footer: "<a href=\"#link\">Datenschutz</a>\n<a href=\"#link\">Bedingungen und Konditionen</a>",
     // Headers
     headerName: 'Name',
     headerProvider: 'Anbieter',
@@ -35,7 +36,14 @@ const de = {
     tagManagerPurpose: 'Cookie von Google zur Steuerung der erweiterten Script- und Ereignisbehandlung.',
     tagManagerPrivacyPolicy: 'https://policies.google.com/privacy?hl=de',
     tagManagerCookieName: '_ga,_gat,_gid',
-    tagManagerDuration: '2 Jahre'
+    tagManagerDuration: '2 Jahre',
+    // Body - Microsoft Clarity
+    clarityName: 'Microsoft Clarity',
+    clarityProvider: 'Microsoft Corporation',
+    clarityPurpose: 'Clarity erfasst Interaktionen auf unserer Website, wie z.B. das Rendering der Seite und Nutzerinteraktionen wie Mausbewegungen, Klicks, Scrollen etc.',
+    clarityPrivacyPolicy: 'https://clarity.microsoft.com/terms',
+    clarityCookieName: '_clck, _clsk, CLID, ANONCHK, MR, MUID, SM',
+    clarityDuration: '2 Jahre'
 };
 
 const en = {
@@ -52,7 +60,8 @@ const en = {
     necessaryCookiesDescription: "These cookies are necessary for the basic functions of the website and cannot be deactivated.",
     analyticalCookiesTitle: "Analytical Cookies",
     analyticalCookiesDescription: "Analytical cookies help us understand how you use our website. This data helps improve your user experience.",
-    caption: 'Cookies',
+    cookieTableCaption: 'Cookies',
+    footer: "<a href=\"#link\">Privacy Policy</a>\n<a href=\"#link\">Terms and conditions</a>",
     // Headers
     headerName: 'Name',
     headerProvider: 'Provider',
@@ -73,7 +82,14 @@ const en = {
     tagManagerPurpose: 'Google cookie for controlling advanced script and event handling.',
     tagManagerPrivacyPolicy: 'https://policies.google.com/privacy?hl=en',
     tagManagerCookieName: '_ga,_gat,_gid',
-    tagManagerDuration: '2 years'
+    tagManagerDuration: '2 years',
+    // Body - Microsoft Clarity
+    clarityName: 'Microsoft Clarity',
+    clarityProvider: 'Microsoft Corporation',
+    clarityPurpose: 'Clarity captures interactions on our website, such as how the page was rendered and what interactions users perform such as mouse movements, clicks, scrolling, etc.',
+    clarityPrivacyPolicy: 'https://clarity.microsoft.com/terms',
+    clarityCookieName: '_clck, _clsk, CLID, ANONCHK, MR, MUID, SM',
+    clarityDuration: '2 years'
 };
 
 const fr = {
@@ -90,7 +106,8 @@ const fr = {
     necessaryCookiesDescription: "Ces cookies sont nécessaires aux fonctions de base du site Web et ne peuvent pas être désactivés.",
     analyticalCookiesTitle: "Cookies analytiques",
     analyticalCookiesDescription: "Les cookies analytiques nous aident à comprendre comment vous utilisez notre site Web. Ces données aident à améliorer votre expérience utilisateur.",
-    caption: 'Cookies',
+    cookieTableCaption: 'Cookies',
+    footer: "<a href=\"#link\">Politique de confidentialité</a>\n<a href=\"#link\">Termes et conditions</a>",
     // Headers
     headerName: 'Nom',
     headerProvider: 'Fournisseur',
@@ -111,7 +128,14 @@ const fr = {
     tagManagerPurpose: 'Cookie de Google pour la gestion des scripts avancés et le traitement des événements.',
     tagManagerPrivacyPolicy: 'https://policies.google.com/privacy?hl=fr',
     tagManagerCookieName: '_ga,_gat,_gid',
-    tagManagerDuration: '2 ans'
+    tagManagerDuration: '2 ans',
+    // Body - Microsoft Clarity
+    clarityName: 'Microsoft Clarity',
+    clarityProvider: 'Microsoft Corporation',
+    clarityPurpose: 'Clarity capture les interactions sur notre site Web, telles que la manière dont la page a été rendue et les interactions effectuées par les utilisateurs, telles que les mouvements de la souris, les clics, le défilement, etc.',
+    clarityPrivacyPolicy: 'https://clarity.microsoft.com/terms',
+    clarityCookieName: '_clck, _clsk, CLID, ANONCHK, MR, MUID, SM',
+    clarityDuration: '2 ans'
 };
 
 function generateTranslationObjectForLang(langObj) {
@@ -122,7 +146,7 @@ function generateTranslationObjectForLang(langObj) {
             acceptAllBtn: langObj.acceptAllBtn,
             // acceptNecessaryBtn: langObj.acceptNecessaryBtn, // Commented out as in the original structure
             showPreferencesBtn: langObj.showPreferencesBtn,
-            footer: ""
+            footer: langObj.footer
         },
         preferencesModal: {
             title: langObj.preferencesModalTitle,
@@ -142,7 +166,7 @@ function generateTranslationObjectForLang(langObj) {
                     description: langObj.analyticalCookiesDescription,
                     linkedCategory: "analytics",
                     cookieTable: {
-                        caption: de.caption,
+                        cookieTableCaption: langObj.cookieTableCaption,
                         headers: {
                             name: langObj.headerName,
                             provider: langObj.headerProvider,
@@ -152,21 +176,29 @@ function generateTranslationObjectForLang(langObj) {
                             duration: langObj.headerDuration,
                         },
                         body: [
+                            // {
+                            //     name: langObj.analyticsName,
+                            //     provider: langObj.analyticsProvider,
+                            //     purpose: langObj.analyticsPurpose,
+                            //     privacyPolicy: langObj.analyticsPrivacyPolicy,
+                            //     cookieName: langObj.analyticsCookieName,
+                            //     duration: langObj.analyticsDuration,
+                            // },
+                            // {
+                            //     name: langObj.tagManagerName,
+                            //     provider: langObj.tagManagerProvider,
+                            //     purpose: langObj.tagManagerPurpose,
+                            //     privacyPolicy: langObj.tagManagerPrivacyPolicy,
+                            //     cookieName: langObj.tagManagerCookieName,
+                            //     duration: langObj.tagManagerDuration,
+                            // },
                             {
-                                name: langObj.analyticsName,
-                                provider: langObj.analyticsProvider,
-                                purpose: langObj.analyticsPurpose,
-                                privacyPolicy: langObj.analyticsPrivacyPolicy,
-                                cookieName: langObj.analyticsCookieName,
-                                duration: langObj.analyticsDuration,
-                            },
-                            {
-                                name: langObj.tagManagerName,
-                                provider: langObj.tagManagerProvider,
-                                purpose: langObj.tagManagerPurpose,
-                                privacyPolicy: langObj.tagManagerPrivacyPolicy,
-                                cookieName: langObj.tagManagerCookieName,
-                                duration: langObj.tagManagerDuration,
+                                name: langObj.clarityName,
+                                provider: langObj.clarityProvider,
+                                purpose: langObj.clarityPurpose,
+                                privacyPolicy: langObj.clarityPrivacyPolicy,
+                                cookieName: langObj.clarityCookieName,
+                                duration: langObj.clarityDuration,
                             }
                         ]
                     }
@@ -176,12 +208,11 @@ function generateTranslationObjectForLang(langObj) {
     };
 }
 
-
 let settings = {
     guiOptions: {
         consentModal: {
-            layout: "bar", // box, cloud, bar
-            position: "bottom left",
+            layout: "box",
+            position: "bottom right",
             equalWeightButtons: false,
             flipButtons: false
         },
@@ -208,6 +239,5 @@ let settings = {
         }
     }
 }
-
 
 CookieConsent.run(settings);

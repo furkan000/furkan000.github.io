@@ -1,4 +1,6 @@
 // import 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.0-rc.17/dist/cookieconsent.umd.js';
+let privacyPolicyLink = '/privacy';
+let termsAndConditionsLink = '/terms-of-use';
 
 const de = {
     consentModalTitle: "Webseitenoptimierung unterstützen",
@@ -15,7 +17,7 @@ const de = {
     analyticalCookiesTitle: "Analytische Cookies",
     analyticalCookiesDescription: "Mit analytischen Cookies verstehen wir, wie Sie unsere Website nutzen. Diese Daten helfen uns, Ihr Nutzererlebnis zu verbessern.",
     cookieTableCaption: 'Cookies',
-    footer: "<a href=\"#link\">Datenschutz</a>\n<a href=\"#link\">Bedingungen und Konditionen</a>",
+    footer: `<a href="${privacyPolicyLink}">Datenschutz</a>\n<a href="${termsAndConditionsLink}">Bedingungen und Konditionen</a>`,
     // Headers
     headerName: 'Name',
     headerProvider: 'Anbieter',
@@ -61,7 +63,7 @@ const en = {
     analyticalCookiesTitle: "Analytical Cookies",
     analyticalCookiesDescription: "Analytical cookies help us understand how you use our website. This data helps improve your user experience.",
     cookieTableCaption: 'Cookies',
-    footer: "<a href=\"#link\">Privacy Policy</a>\n<a href=\"#link\">Terms and conditions</a>",
+    footer: `<a href="${privacyPolicyLink}">Privacy Policy</a>\n<a href="${termsAndConditionsLink}">Terms and conditions</a>`,
     // Headers
     headerName: 'Name',
     headerProvider: 'Provider',
@@ -107,7 +109,7 @@ const fr = {
     analyticalCookiesTitle: "Cookies analytiques",
     analyticalCookiesDescription: "Les cookies analytiques nous aident à comprendre comment vous utilisez notre site Web. Ces données aident à améliorer votre expérience utilisateur.",
     cookieTableCaption: 'Cookies',
-    footer: "<a href=\"#link\">Politique de confidentialité</a>\n<a href=\"#link\">Termes et conditions</a>",
+    footer: `<a href="${privacyPolicyLink}">Politique de confidentialité</a>\n<a href="${termsAndConditionsLink}">Termes et conditions</a>`,
     // Headers
     headerName: 'Nom',
     headerProvider: 'Fournisseur',
@@ -144,7 +146,7 @@ function generateTranslationObjectForLang(langObj) {
             title: langObj.consentModalTitle,
             description: langObj.consentModalDescription,
             acceptAllBtn: langObj.acceptAllBtn,
-            // acceptNecessaryBtn: langObj.acceptNecessaryBtn, // Commented out as in the original structure
+            acceptNecessaryBtn: langObj.acceptNecessaryBtn,
             showPreferencesBtn: langObj.showPreferencesBtn,
             footer: langObj.footer
         },

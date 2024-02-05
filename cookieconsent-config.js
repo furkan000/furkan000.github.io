@@ -2,6 +2,15 @@
 let privacyPolicyLink = '/privacy';
 let termsAndConditionsLink = '/terms-of-use';
 
+function waitForClarityToBeAvailable() {
+    let intervalId = setInterval(() => {
+        if (typeof runClarity === 'function') {
+            clearInterval(intervalId); // Stop checking once the function is found
+            runClarity(); // Call the function
+        }
+    }, 100); // Check every 100 milliseconds
+}
+
 const de = {
     consentModalTitle: "Webseitenoptimierung unterstützen",
     consentModalDescription: "Wir verwenden Cookies, um Ihre Erfahrung zu verbessern. Einige sind notwendig für den Betrieb der Seite, andere helfen uns, sie zu optimieren. Mit Ihrer Zustimmung unterstützen Sie unsere Webseitenoptimierung.\n",
@@ -43,7 +52,7 @@ const de = {
     clarityName: 'Microsoft Clarity',
     clarityProvider: 'Microsoft Corporation',
     clarityPurpose: 'Clarity erfasst Interaktionen auf unserer Website, wie z.B. das Rendering der Seite und Nutzerinteraktionen wie Mausbewegungen, Klicks, Scrollen etc.',
-    clarityPrivacyPolicy: 'https://clarity.microsoft.com/terms',
+    clarityPrivacyPolicy: 'https://<wbr/>clarity.<wbr/>microsoft.<wbr/>com/<wbr/>terms',
     clarityCookieName: '_clck, _clsk, CLID, ANONCHK, MR, MUID, SM',
     clarityDuration: '2 Jahre'
 };
@@ -89,7 +98,7 @@ const en = {
     clarityName: 'Microsoft Clarity',
     clarityProvider: 'Microsoft Corporation',
     clarityPurpose: 'Clarity captures interactions on our website, such as how the page was rendered and what interactions users perform such as mouse movements, clicks, scrolling, etc.',
-    clarityPrivacyPolicy: 'https://clarity.microsoft.com/terms',
+    clarityPrivacyPolicy: 'https://<wbr/>clarity.<wbr/>microsoft.<wbr/>com/<wbr/>terms',
     clarityCookieName: '_clck, _clsk, CLID, ANONCHK, MR, MUID, SM',
     clarityDuration: '2 years'
 };
@@ -135,7 +144,7 @@ const fr = {
     clarityName: 'Microsoft Clarity',
     clarityProvider: 'Microsoft Corporation',
     clarityPurpose: 'Clarity capture les interactions sur notre site Web, telles que la manière dont la page a été rendue et les interactions effectuées par les utilisateurs, telles que les mouvements de la souris, les clics, le défilement, etc.',
-    clarityPrivacyPolicy: 'https://clarity.microsoft.com/terms',
+    clarityPrivacyPolicy: 'https://<wbr/>clarity.<wbr/>microsoft.<wbr/>com/<wbr/>terms',
     clarityCookieName: '_clck, _clsk, CLID, ANONCHK, MR, MUID, SM',
     clarityDuration: '2 ans'
 };
@@ -178,6 +187,14 @@ function generateTranslationObjectForLang(langObj) {
                             duration: langObj.headerDuration,
                         },
                         body: [
+                            {
+                                name: langObj.clarityName,
+                                provider: langObj.clarityProvider,
+                                purpose: langObj.clarityPurpose,
+                                privacyPolicy: langObj.clarityPrivacyPolicy,
+                                cookieName: langObj.clarityCookieName,
+                                duration: langObj.clarityDuration,
+                            }
                             // {
                             //     name: langObj.analyticsName,
                             //     provider: langObj.analyticsProvider,
@@ -194,14 +211,6 @@ function generateTranslationObjectForLang(langObj) {
                             //     cookieName: langObj.tagManagerCookieName,
                             //     duration: langObj.tagManagerDuration,
                             // },
-                            {
-                                name: langObj.clarityName,
-                                provider: langObj.clarityProvider,
-                                purpose: langObj.clarityPurpose,
-                                privacyPolicy: langObj.clarityPrivacyPolicy,
-                                cookieName: langObj.clarityCookieName,
-                                duration: langObj.clarityDuration,
-                            }
                         ]
                     }
                 }
@@ -229,11 +238,29 @@ let settings = {
         necessary: {
             readOnly: true
         },
-        analytics: {}
+        analytics: {
+            autoClear: {
+                cookies: [
+                    // {
+                    //     name: /^_ga/,   // regex: match all cookies starting with '_ga'
+                    // },
+                    {
+                        name: /(_clck|_clsk|CLID|ANONCHK|MR|MUID|SM)/,   // regex for Microsoft Clarity cookies
+                    },
+                ]
+            },
+            services: {
+                clarity: {
+                    label: 'Microsoft Clarity',
+                    onAccept: () => {waitForClarityToBeAvailable();},
+                    onRevoke: () => {}
+                }
+            }
+        }
     },
     language: {
         default: "de",
-        autoDetect: "browser",
+        autoDetect: "document",
         translations: {
             de: generateTranslationObjectForLang(de),
             en: generateTranslationObjectForLang(en),

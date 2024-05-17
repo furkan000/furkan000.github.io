@@ -21,6 +21,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <script>
     function run() {
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+
+
       localStorage.setItem("consentGranted", "true");
       gtag("consent", "update", {
         ad_user_data: "granted",

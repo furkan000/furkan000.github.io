@@ -2,26 +2,13 @@
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=GTM-MSV7Z5GW"
-    ></script>
+    <script src="https://www.googletagmanager.com/gtag/js?id=GTM-MSV7Z5GW"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-
-      gtag("consent", "default", {
-        ad_user_data: "denied",
-        ad_personalization: "denied",
-        ad_storage: "denied",
-        analytics_storage: "denied",
-        wait_for_update: 500,
-      });
-
-      gtag("js", new Date());
-      gtag("config", "GTM-MSV7Z5GW", { allow_enhanced_conversions: true });
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+  
+      gtag('config', 'GTM-MSV7Z5GW');
     </script>
   </head>
   <body>
